@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Excercise</title>
+	<style type="text/css">
+	* {
+		font-family: sans;
+	}
+	section {
+		width: 100%;
+	}
+	article {
+		background-color:  #eee;
+		padding: 10px;
+		margin: 5px;
+	}
+	.published {
+		background-color: skyblue;
+	}
+	form div {
+		padding: 5%px;
+	}
+	input {
+		font-size: 20px;
+	}
+	</style>
+</head>
+<body><center>
+<header>LVCC Blog</header>
+<section>
+	<article>
+		<form >
+			<div>
+				<label>Title</label>
+			</div>
+			<div>
+				<input type="text" name="title" id="input_title" size="60" placeholder="Title"/>
+			</div>
+			<div>
+				<label>Author</label>
+			</div>
+			<div>
+				<label>Last name</label>
+			</div>
+			<div>
+				<input type="text" name="lastname" id="input_lastname" size="60" placeholder="Last name"/>
+			</div>
+			<div>
+				<label>First name</label>
+			</div>
+			<div>
+				<input type="text" name="firstname" id="input_firstname" size="60" placeholder="First name"/>
+			</div>
+			<div>
+				<label>Middle name</label>
+			</div>
+			<div>
+				<input type="text" name="middlename" id="input_middlename" size="60" placeholder="Middle name"/>
+			</div>
+			<div>
+				<label>Content</label>
+			</div>
+			<div>
+				<textarea name="content" id="input_content" rows="10" cols="100%" placeholder="Type text here....."></textarea>
+			</div>
+			<div>
+				<input type="button" value="Submit" onClick="postBlog()"/>
+			</div>
+		</form>
+	</article>
+</center>
+</section>
+	<article class="published">
+			<h1 id="title"></h1>
+			<h6 id="fullname"></h6>
+			<p id="content"></p>
+	</article>
+<footer><center>All rights reserved & copy; 2015</center></footer>	
+<script type="text/javascript">
+function postBlog() {
+	var input_title = document.getElementById("input_title").value;
+	var input_lastname = document.getElementById("input_lastname").value;
+	var input_firstname = document.getElementById("input_firstname").value;
+	var input_middlename = document.getElementById("input_middlename").value;
+	var input_content = document.getElementById("input_content").value;
+	var full_name = input_lastname + " " + input_firstname + " " + input_middlename;
+
+	document.getElementById("title").innerHTML = input_title;
+	var date_today = new Date();
+	document.getElementById("fullname").innerHTML = full_name + " " + date_today;
+	document.getElementById("content").innerHTML = input_content;
+}
+</script>
+</body>
+</html>
